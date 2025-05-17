@@ -3,10 +3,10 @@ Feature: Comprar produto
     Escolher o produto
     Realizar uma compra com sucesso
 
-  Scenario: Comprar um produto com sucesso
+  Scenario Outline: Comprar um produto com sucesso
     Given que acesso o site "https://www.saucedemo.com/"
     
-    When informo "user" e "password" validos
+    When informo <user> e <password> validos
     And clico no botao Login
     Then sou redirecionado para a lista de produtos
 
@@ -26,3 +26,8 @@ Feature: Comprar produto
 
     When clico no botao Finish
     Then sou redirecionado para a pagina de confirmacao de compra
+
+
+Examples:
+|user                |password            |
+|"standard_user"     |"secret_sauce"      |
