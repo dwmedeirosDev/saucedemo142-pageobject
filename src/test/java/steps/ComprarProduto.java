@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Base;
+import pages.InventoryPage;
 import pages.LoginPage;
 
 public class ComprarProduto {
@@ -15,6 +16,7 @@ public class ComprarProduto {
     // Atributos da classe
     final WebDriver driver;
     private LoginPage loginPage;
+    private InventoryPage inventoryPage;
 
     // Construtor
     public ComprarProduto(Base base) {
@@ -40,16 +42,20 @@ public class ComprarProduto {
     @When("clico no botao Login")
     public void clico_no_botao_login() {
 
+        loginPage.clicarLogin();
     }
 
     @Then("sou redirecionado para a lista de produtos")
     public void sou_redirecionado_para_a_lista_de_produtos() {
+        inventoryPage = new InventoryPage(driver);
 
+        assertEquals("Products", inventoryPage.lerTituloPageInventory());
     }
 
     @When("seleciono o {string}")
     public void seleciono_o(String string) {
 
+        inventoryPage.selecionarProduto();
     }
 
     @Then("sou redirecionado para a pagina do produto")
