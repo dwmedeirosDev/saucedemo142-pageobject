@@ -9,6 +9,10 @@ public class CommonPage {
     // Construtor
     public CommonPage(WebDriver driver){
         this.driver = driver;
+    }
 
+    // Métodos ou funções em comum
+    public String lerNomeGuia(){
+        return driver.getTitle();
     }
 }

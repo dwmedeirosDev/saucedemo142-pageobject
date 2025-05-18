@@ -1,10 +1,24 @@
 package steps;
 
+import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.Base;
+import pages.LoginPage;
 
 public class ComprarProduto {
+
+    // Atributos da classe
+    final WebDriver driver;
+    private LoginPage loginPage;
+
+    // Construtor
+    public ComprarProduto(Base base){
+        this.driver = base.driver;
+    }
+
     @Given("que acesso o site {string}")
     public void que_acesso_o_site(String string) {
 
