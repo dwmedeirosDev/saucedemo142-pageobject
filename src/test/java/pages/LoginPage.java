@@ -8,6 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends CommonPage {
 
     // Elementos mapeados
+    @FindBy(className = "login_logo")
+    WebElement tituloPageLogin;
+
     @FindBy(id = "user-name")
     WebElement campoUser;
 
@@ -24,8 +27,12 @@ public class LoginPage extends CommonPage {
     }
 
     // Ações dos elementos
-    public void acessarLoginPage(){
-        driver.get("https://www.saucedemo.com/");
+    public void acessarLoginPage(String url) {
+        driver.get(url);
+    }
+
+    public String lerTituloPageLogin(){
+        return tituloPageLogin.getText();
     }
 
     public void preencherUser(String user) {

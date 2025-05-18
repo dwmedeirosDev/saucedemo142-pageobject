@@ -1,5 +1,7 @@
 package steps;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Given;
@@ -15,18 +17,24 @@ public class ComprarProduto {
     private LoginPage loginPage;
 
     // Construtor
-    public ComprarProduto(Base base){
+    public ComprarProduto(Base base) {
         this.driver = base.driver;
     }
 
     @Given("que acesso o site {string}")
-    public void que_acesso_o_site(String string) {
+    public void que_acesso_o_site(String url) {
+        loginPage = new LoginPage(driver); // Instanciando a página LoginPage
 
+        loginPage.acessarLoginPage(url);
+        assertEquals("Swag Labs", loginPage.lerNomeGuia());
+        assertEquals("Swag Labs", loginPage.lerTituloPageLogin());
     }
 
     @When("informo {string} e {string} validos")
-    public void informo_e_validos(String string, String string2) {
+    public void informo_e_validos(String user, String password) {
 
+        loginPage.preencherUser(user);
+        loginPage.preencherPassword(password);
     }
 
     @When("clico no botao Login")
