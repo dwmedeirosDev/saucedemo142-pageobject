@@ -20,6 +20,9 @@ public class OverviewPage extends CommonPage {
     @FindBy(css = "[data-test='total-info-label']")
     WebElement precoTotal;
 
+    @FindBy(id = "finish")
+    WebElement botaoFinish;
+
     // Construtor
     public OverviewPage(WebDriver driver) {
         super(driver); // Herdado do CommonPage
@@ -41,5 +44,9 @@ public class OverviewPage extends CommonPage {
 
     public String lerPrecoTotal() {
         return precoTotal.getText();
+    }
+
+    public void clicarBotaoFinish(){
+        botaoFinish.click();
     }
 }

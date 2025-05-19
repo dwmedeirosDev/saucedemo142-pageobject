@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import pages.Base;
 import pages.CartPage;
 import pages.CheckoutPage;
+import pages.CompletePage;
 import pages.InventoryItemPage;
 import pages.InventoryPage;
 import pages.LoginPage;
@@ -25,6 +26,7 @@ public class ComprarProduto {
     private CartPage cartPage;
     private CheckoutPage checkoutPage;
     private OverviewPage overviewPage;
+    private CompletePage completePage;
 
     // Construtor
     public ComprarProduto(Base base) {
@@ -133,10 +135,13 @@ public class ComprarProduto {
     @When("clico no botao Finish")
     public void clico_no_botao_finish() {
 
+        overviewPage.clicarBotaoFinish();
     }
 
     @Then("sou redirecionado para a pagina de confirmacao de compra")
     public void sou_redirecionado_para_a_pagina_de_confirmacao_de_compra() {
+        completePage = new CompletePage(driver);
 
+        completePage.lerTituloCompraCompleta();
     }
 }
