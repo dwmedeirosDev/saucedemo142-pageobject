@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Base;
 import pages.CartPage;
+import pages.CheckoutPage;
 import pages.InventoryItemPage;
 import pages.InventoryPage;
 import pages.LoginPage;
@@ -21,6 +22,7 @@ public class ComprarProduto {
     private InventoryPage inventoryPage;
     private InventoryItemPage inventoryItemPage;
     private CartPage cartPage;
+    private CheckoutPage checkoutPage;
 
     // Construtor
     public ComprarProduto(Base base) {
@@ -97,17 +99,23 @@ public class ComprarProduto {
 
     @Then("sou redirecionado para a pagina de checkout")
     public void sou_redirecionado_para_a_pagina_de_checkout() {
+        checkoutPage = new CheckoutPage(driver);
 
+        // assertEquals("Checkout: Your Information", checkoutPage.lerTituloPageCheckout());
     }
 
     @When("informo {string}, {string} e {string} nos campos")
-    public void informo_e_nos_campos(String string, String string2, String string3) {
+    public void informo_e_nos_campos(String primeiroNome, String ultimoNome, String cep) {
 
+        checkoutPage.preencherPrimeiroNome(primeiroNome);
+        checkoutPage.preencherUltimoNome(ultimoNome);
+        checkoutPage.preencherCep(cep);
     }
 
     @When("clico no botao Continue")
     public void clico_no_botao_continue() {
 
+        checkoutPage.clicarContinue();
     }
 
     @Then("sou redirecionado para a pagina overview")

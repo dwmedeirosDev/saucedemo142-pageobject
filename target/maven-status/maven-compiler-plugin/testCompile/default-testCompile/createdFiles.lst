@@ -1,0 +1,12 @@
+pages\CompletePage.class
+pages\LoginPage.class
+pages\CartPage.class
+pages\Base.class
+pages\InventoryPage.class
+steps\runner.class
+pages\InventoryItemPage.class
+pages\CommonPage.class
+steps\ComprarProduto.class
+pages\CheckoutPage.class
+steps\Hooks.class
+pages\OverviewPage.class
