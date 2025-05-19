@@ -20,11 +20,12 @@ public class InventoryPage extends CommonPage {
         PageFactory.initElements(driver, this);
     }
 
-    public String lerTituloPageInventory(){
+    // Ações dos elementos
+    public String lerTituloPageInventory() {
         return tituloPageInventory.getText();
     }
 
-    public void selecionarProduto(){
+    public void selecionarProduto() {
         produto.click();
     }
 }

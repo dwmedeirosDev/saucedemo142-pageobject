@@ -31,7 +31,7 @@ public class LoginPage extends CommonPage {
         driver.get(url);
     }
 
-    public String lerTituloPageLogin(){
+    public String lerTituloPageLogin() {
         return tituloPageLogin.getText();
     }
 
