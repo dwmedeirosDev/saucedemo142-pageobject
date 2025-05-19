@@ -11,6 +11,9 @@ public class CartPage extends CommonPage {
     @FindBy(className = "title")
     WebElement tituloCartPage;
 
+    @FindBy(id = "item_4_title_link")
+    WebElement tituloProduto;
+
     @FindBy(id = "checkout")
     WebElement botaoCheckout;
 
@@ -23,6 +26,10 @@ public class CartPage extends CommonPage {
     // Ações dos elementos
     public String lerTituloCartPage() {
         return tituloCartPage.getText();
+    }
+
+    public String lerTituloProduto() {
+        return tituloProduto.getText();
     }
 
     public void clicarBotaoCheckout(){

@@ -86,6 +86,7 @@ public class ComprarProduto {
         cartPage = new CartPage(driver);
 
         assertEquals("Your Cart", cartPage.lerTituloCartPage());
+        assertEquals("Sauce Labs Backpack", cartPage.lerTituloProduto());
     }
 
     @When("clico no botao Checkout")
