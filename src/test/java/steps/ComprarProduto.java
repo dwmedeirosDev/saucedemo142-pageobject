@@ -13,6 +13,7 @@ import pages.CheckoutPage;
 import pages.InventoryItemPage;
 import pages.InventoryPage;
 import pages.LoginPage;
+import pages.OverviewPage;
 
 public class ComprarProduto {
 
@@ -23,6 +24,7 @@ public class ComprarProduto {
     private InventoryItemPage inventoryItemPage;
     private CartPage cartPage;
     private CheckoutPage checkoutPage;
+    private OverviewPage overviewPage;
 
     // Construtor
     public ComprarProduto(Base base) {
@@ -101,7 +103,7 @@ public class ComprarProduto {
     public void sou_redirecionado_para_a_pagina_de_checkout() {
         checkoutPage = new CheckoutPage(driver);
 
-        // assertEquals("Checkout: Your Information", checkoutPage.lerTituloPageCheckout());
+        assertEquals("Checkout: Your Information", checkoutPage.lerTituloPageCheckout());
     }
 
     @When("informo {string}, {string} e {string} nos campos")
@@ -120,7 +122,12 @@ public class ComprarProduto {
 
     @Then("sou redirecionado para a pagina overview")
     public void sou_redirecionado_para_a_pagina_overview() {
+        overviewPage = new OverviewPage(driver);
 
+        // overviewPage.lerTituloPageOverview();
+        overviewPage.lerInformacaoPagamento();
+        overviewPage.lerInformacaoEnvio();
+        overviewPage.lerPrecoTotal();
     }
 
     @When("clico no botao Finish")
