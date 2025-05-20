@@ -23,5 +23,9 @@ Feature: Comprar produto
     Then sou redirecionado para a pagina de confirmacao de compra
 
     Examples:
-      | skuProduto | nomeProduto           | valorProduto | user          | password     | primeiroNome | ultimoNome | cep       |
-      |          0 | Sauce Labs Bike Light | $9.99        | standard_user | secret_sauce | David        | Feijão     | 99999-888 |
+      | skuProduto | nomeProduto                       | valorProduto | user          | password     | primeiroNome | ultimoNome | cep       |
+      |          0 | Sauce Labs Bike Light             | $9.99        | standard_user | secret_sauce | David        | Feijão     | 99999-888 |
+      |          1 | Sauce Labs Bolt T-Shirt           | $15.99       | standard_user | secret_sauce | Fernanda     | Flores     | 88888-777 |
+      |          2 | Sauce Labs Onesie                 | $7.99        | standard_user | secret_sauce | Blaze        | Demo       | 77777-666 |
+      |          3 | Test.allTheThings() T-Shirt (Red) | $15.99       | standard_user | secret_sauce | Sauce        | Demo       | 66666-555 |
+      |          4 | Sauce Labs Backpack               | $29.99       | standard_user | secret_sauce | Teste        | Teste      | 55555-444 |
