@@ -62,10 +62,9 @@ public class ComprarProduto {
         assertEquals("Products", inventoryPage.lerTituloPageInventory());
     }
 
-    @When("seleciono o {string}")
-    public void seleciono_o(String string) {
-
-        inventoryPage.selecionarProduto();
+    @When("seleciono o produto de sku {string}")
+    public void seleciono_o_produto_de_sku(String skuProduto) {
+        inventoryPage.selecionarProdutoSku(skuProduto);
     }
 
     @Then("sou redirecionado para a pagina do produto")
@@ -92,7 +91,13 @@ public class ComprarProduto {
         cartPage = new CartPage(driver);
 
         assertEquals("Your Cart", cartPage.lerTituloCartPage());
-        assertEquals("Sauce Labs Backpack", cartPage.lerTituloProduto());
+    }
+
+    @Then("valido o nome do produto {string} e preço {string} do sku {string}")
+    public void valido_o_nome_do_produto_e_preco_do_sku(String nomeProduto, String valorProduto, String skuProduto) {
+
+        assertEquals(nomeProduto, cartPage.lerTituloProduto(skuProduto));
+        assertEquals(valorProduto, cartPage.lerValorProduto());
     }
 
     @When("clico no botao Checkout")
