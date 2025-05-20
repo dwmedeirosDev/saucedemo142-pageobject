@@ -31,7 +31,7 @@ public class InventoryItemPage extends CommonPage {
         botaoAddToCart.click();
     }
 
-    public void clicarCart(){
+    public void clicarCart() {
         botãoCart.click();
     }
 

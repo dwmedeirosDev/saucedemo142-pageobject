@@ -12,9 +12,6 @@ public class InventoryPage extends CommonPage {
     @FindBy(className = "title")
     WebElement tituloPageInventory;
 
-    // @FindBy(id = "item_4_title_link")
-    // WebElement skuProduto;
-
     public By byProdutoSku(String skuProduto) {
         return By.id("item_" + skuProduto + "_title_link");
     }
@@ -29,16 +26,6 @@ public class InventoryPage extends CommonPage {
     public String lerTituloPageInventory() {
         return tituloPageInventory.getText();
     }
-
-    // public void selecionarProdutoSku() {
-    // skuProduto.click();
-    // }
-
-    // public void selecionarProdutoSku(String sku) {
-    // String skuExamples = "item_" + sku + "_title_link";
-    // WebElement produto = driver.findElement(By.id(skuExamples));
-    // produto.click();
-    // }
 
     public void selecionarProdutoSku(String skuProduto) {
         driver.findElement(byProdutoSku(skuProduto)).click();

@@ -29,23 +29,23 @@ public class CheckoutPage extends CommonPage {
         PageFactory.initElements(driver, this);
     }
 
-    public String lerTituloPageCheckout(){
+    public String lerTituloPageCheckout() {
         return tituloPageCheckout.getText();
     }
 
-    public void preencherPrimeiroNome(String primeiroNome){
+    public void preencherPrimeiroNome(String primeiroNome) {
         campoPrimeiroNome.sendKeys(primeiroNome);
     }
 
-    public void preencherUltimoNome(String ultimoNome){
+    public void preencherUltimoNome(String ultimoNome) {
         campoUltimoNome.sendKeys(ultimoNome);
     }
 
-    public void preencherCep(String cep){
+    public void preencherCep(String cep) {
         campoCep.sendKeys(cep);
     }
 
-    public void clicarContinue(){
+    public void clicarContinue() {
         botaoContinue.click();
     }
 }
